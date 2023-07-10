@@ -43,7 +43,6 @@ class ContactusAPI(GenericAPIView, CreateModelMixin):
     def post(self, request):
         try:
             subject = 'Some one contacted you!!'
-            print(request.data)
             message = f"NAME:{request.data['name']}\nEMAIL:{request.data['email']}\nPHONE:{request.data['phone']}\nMESSAGE:{request.data['message']}"
             email_from = settings.EMAIL_HOST_USER
             recipient_list = ['hemantsin14303@gmail.com']
