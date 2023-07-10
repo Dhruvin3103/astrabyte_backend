@@ -45,7 +45,7 @@ class ContactusAPI(GenericAPIView, CreateModelMixin):
             subject = 'Some one contacted you!!'
             message = f"NAME:{request.data['name']}\nEMAIL:{request.data['email']}\nPHONE:{request.data['phone']}\nMESSAGE:{request.data['message']}"
             email_from = settings.EMAIL_HOST_USER
-            recipient_list = ['hemantsin14303@gmail.com']
+            recipient_list = ['dhruvinhemant5@gmail.com']
             send_mail( subject, message, email_from, recipient_list )
         except Exception as e:
             return Response({'status': 403, 'message': 'Sorry Some error has occured', 'error':str(e)})
