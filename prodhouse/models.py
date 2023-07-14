@@ -23,6 +23,8 @@ class Contactus(models.Model):
     def __str__(self) -> str:
         return self.name+' '+self.email
 
+class Images(models.Model):
+    image = models.ImageField(upload_to="image/img/")
 
 class Slave(models.Model):
     name = models.CharField(max_length=300)

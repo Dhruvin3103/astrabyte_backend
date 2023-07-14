@@ -15,3 +15,8 @@ class SlaveSerializer(serializers.ModelSerializer):
     class Meta:
         model = Slave
         fields = '__all__'
+
+class ImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Images
+        fields = "__all__"

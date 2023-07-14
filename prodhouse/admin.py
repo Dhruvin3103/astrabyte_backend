@@ -5,3 +5,4 @@ from prodhouse.models import *
 admin.site.register(Portfolio)
 admin.site.register(Contactus)
 admin.site.register(Slave)
+admin.site.register(Images)
