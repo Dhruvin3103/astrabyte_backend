@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import Portfolio,Contactus,Slave,Images
-from .serializer import PortfolioSerializer,ContactusSerializer,SlaveSerializer,ImageSerializer
+from .models import Portfolio,Contactus,Founder,Images
+from .serializer import PortfolioSerializer,ContactusSerializer,FoundersSerializer,ImageSerializer
 from  rest_framework.generics import GenericAPIView,ListAPIView
 from rest_framework.mixins import ListModelMixin,CreateModelMixin,RetrieveModelMixin
 from django.core.mail import send_mail
@@ -22,9 +22,9 @@ class ImageAPI(GenericAPIView,ListModelMixin):
     def get(self,request):
         return self.list(request)
 
-class SlaveAPI(GenericAPIView, ListModelMixin, CreateModelMixin):
-    serializer_class = SlaveSerializer
-    queryset = Slave.objects.all()
+class FounderAPI(GenericAPIView, ListModelMixin, CreateModelMixin):
+    serializer_class = FoundersSerializer
+    queryset = Founder.objects.all()
     def get(self, request):
         return self.list(request)
 
@@ -37,8 +37,8 @@ class SearchAPI(ListAPIView):
 
 
 class Search2API(ListAPIView):
-    queryset = Slave.objects.all()
-    serializer_class = SlaveSerializer
+    queryset = Founder.objects.all()
+    serializer_class = FoundersSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['slave_type']
 # /?slave_type = Core

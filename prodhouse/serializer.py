@@ -11,9 +11,9 @@ class ContactusSerializer(serializers.ModelSerializer):
         model = Contactus
         fields = '__all__'
 
-class SlaveSerializer(serializers.ModelSerializer):
+class FoundersSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Slave
+        model = Founder
         fields = '__all__'
 
 class ImageSerializer(serializers.ModelSerializer):
